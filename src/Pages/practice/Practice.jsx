@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./Practice.css";
 import Header from "../../components/d_header/Header";
 import topic from "../../assets/topic.png";
-import { IoIosArrowDropleftCircle } from "react-icons/io";
-import { IoIosArrowDroprightCircle } from "react-icons/io";
+import PracticeStage from "../../components/practicephases/PracticeStage";
 
 const Practice = () => {
   const tableTopics = [
@@ -91,9 +90,9 @@ const Practice = () => {
 
   const [tableTopic, setTableTopic] = useState(tableTopics[0]);
 
-  const [timer, setTimer] = useState(0);
-  const [isSpeaking, setIsSpeaking] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(0);
+//   const [timer, setTimer] = useState(0);
+//   const [isSpeaking, setIsSpeaking] = useState(false);
+//   const [timeLeft, setTimeLeft] = useState(0);
   const [status, setStatus] = useState("not-started");
 
   const handleTableTopic = () => {
@@ -102,45 +101,23 @@ const Practice = () => {
   };
 
   const prepareToSpeak = () => {
+    setStatus("preparing");
     setTimeout(() => {
-      setStatus("preparing");
-      setTimeLeft(tableTopic.time);
+      setStatus("speaking");
     }, 3000);
-  }
+  };
 
   return (
     <div className="ds">
       <Header value="practice" />
       <section className="practice-container">
         <div className="practice-holder">
-          {status === "not-started"? (
-            <>
-              <h3>Table Topic</h3>
-              <div className="flex-row">
-                <div className="iconnn">
-                  <IoIosArrowDropleftCircle onClick={handleTableTopic} />
-                </div>
-                <div className="table-topic">
-                  <img src={tableTopic.img} alt="topic" />
-                  <div className="topic-info">
-                    <h2>{tableTopic.topic}</h2>
-                    <div className="flex-row">
-                      <p className="tag">{tableTopic.tag}</p>
-                      <p>{tableTopic.time} seconds</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="iconnn">
-                  <IoIosArrowDroprightCircle onClick={handleTableTopic} />
-                </div>
-              </div>
-              <div className="instructions">
-                <p>Try to avoid filler words such as um, ah, like, so, etc.</p>
-                <p>The goal is to make clear and confident speechs</p>
-                <button className="btn" onClick={() => {prepareToSpeak()}}>Start Speaking</button>
-              </div>
-            </>
-          ): ""}
+          <PracticeStage
+            status={status}
+            handleTableTopic={handleTableTopic}
+            tableTopic={tableTopic}
+            prepareToSpeak={prepareToSpeak}
+          />
         </div>
       </section>
     </div>
