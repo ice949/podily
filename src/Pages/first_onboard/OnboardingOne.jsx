@@ -53,7 +53,7 @@ const OnboardingOne = () => {
                 }
             </div>
             <div className="flex-row-end">
-                <button onClick={() => {savePublicSpeakingAreas()}}>Continue <FaArrowRight/></button>
+                <button className='btn' onClick={() => {savePublicSpeakingAreas()}}>Continue <FaArrowRight/></button>
             </div>
         </div>
         <div className="second-col">

@@ -1,8 +1,9 @@
 import React from 'react'
+import './OnboardingTwo.css';
 import onboardTwo from '../../assets/onboardtwo.png'; 
 import logo from '../../assets/logo.png';
-import { FaArrowRight } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import { NavLink, useNavigate } from 'react-router-dom';
 import avarta from '../../assets/onboardavarta.png';
 
 const OnboardingTwo = () => {
@@ -14,13 +15,13 @@ const OnboardingTwo = () => {
         {id: 3, value: 'My classmates in school', selected: false},
         {id: 4, value: 'Customers or clients', selected: false},
         {id: 5, value: 'groups of 50+ people', selected: false},
-        {id: 6, value: 'Other audience', selected: true},
+        {id: 6, value: 'Other audience', selected: false},
     ];
 
     const savePublicSpeakingAreas = () => {
         const selectedAreas = audience.filter(area => area.selected)
         console.log(selectedAreas)
-        navigate('/onboarding-two')
+        navigate('/pathways')
     }
   return (
     <div className='onboard'>
@@ -39,17 +40,24 @@ const OnboardingTwo = () => {
             <div className="flex-column2">
                 <h2>Who is your main audience when giving presentations?</h2>
             </div>
-            <div className="flex-column3">
+            <div className="flex-column2">
                 {
-                    audience.map((area, index) => (
-                        <div key={area.id} className={`flex-row-space audience ${area.selected? "greybd" : "light-blue-bd"}`}>
-                            <div className="flex-row"></div>
+                    audience.map((area) => (
+                        <div key={area.id} className={`flex-row-space audience ${!area.selected? "greybd" : "light-blue-bd"}`}>
+                            <div className="flex-row">
+                                <img src={avarta} alt="avarta" />
+                                <label>{area.value}</label>
+                            </div>
+                            <FaArrowRight />
                         </div>
                     ))
                 }
             </div>
-            <div className="flex-row-end">
-                <button onClick={() => {savePublicSpeakingAreas()}}>Continue <FaArrowRight/></button>
+            <div className="flex-row-space">
+                <NavLink to="/onboarding-one" btn-link>
+                    <FaArrowLeft/> 
+                    Back</NavLink>
+                <button className='btn' onClick={() => {savePublicSpeakingAreas()}}>Continue <FaArrowRight/></button>
             </div>
         </div>
         <div className="second-col">

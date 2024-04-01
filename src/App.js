@@ -5,6 +5,7 @@ import Signup from './Pages/Signup/Signup';
 import Signin from './Pages/Signin/Signin';
 import OnboardingOne from './Pages/first_onboard/OnboardingOne';
 import OnboardingTwo from './Pages/second_onboard/OnboardingTwo';
+import Pathways from './Pages/pathways/Pathways';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/onboarding-one" element={<OnboardingOne />} />
         <Route path="/onboarding-two" element={<OnboardingTwo />} />
+        <Route path="/pathways" element={<Pathways />} />
       </Routes>
     </Router>
   );

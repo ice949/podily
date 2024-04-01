@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .full-width {
@@ -56,6 +57,7 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
+    align-items: center;
 }
 
 .form-group {
