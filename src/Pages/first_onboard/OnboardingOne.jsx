@@ -46,7 +46,7 @@ const OnboardingOne = () => {
                 {
                     publicSpeakingAreas.map((area, index) => (
                         <div key={area.id} className={`flex-row area ${index % 2 === 1? "white-bg" : "grey-bg"}`}>
-                            <input type="checkbox" checked={area.checked} />
+                            <input type="checkbox" />
                             <label>{area.value}</label>
                         </div>
                     ))

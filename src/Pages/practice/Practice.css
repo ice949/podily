@@ -111,3 +111,23 @@ img {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: #fff;
 }
+
+.recording-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    animation: pulse 1s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }

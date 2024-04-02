@@ -23,6 +23,9 @@ const OnboardingTwo = () => {
         console.log(selectedAreas)
         navigate('/pathways')
     }
+
+
+
   return (
     <div className='onboard'>
         <div className="first-col">

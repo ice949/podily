@@ -104,6 +104,12 @@ const Practice = () => {
     setStatus("preparing");
     setTimeout(() => {
       setStatus("speaking");
+      setTimeout(() => {
+        setStatus("analyzing");
+        setTimeout(() => {
+          setStatus("done");
+        }, 3 * 1000);
+      }, tableTopic.time * 1000);
     }, 3000);
   };
 
@@ -117,6 +123,7 @@ const Practice = () => {
             handleTableTopic={handleTableTopic}
             tableTopic={tableTopic}
             prepareToSpeak={prepareToSpeak}
+            setStatus={setStatus}
           />
         </div>
       </section>
