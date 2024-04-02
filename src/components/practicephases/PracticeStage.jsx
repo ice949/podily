@@ -218,21 +218,25 @@ const PracticeStage = ({
         <h3>Results</h3>
         <div className="results">
           {results.map((result, index) => (
-            <div key={index} className="result">
+            <div key={index} className="result" style={{ backgroundColor: result.color }}>
               <div className="flex-row-space">
                 <div className="flex-row">
-                  <div className="icon" style={{ backgroundColor: result.color }}>
+                  <div className="icon" >
                     {result.icon}
                   </div>
                   <h3>{result.name}</h3>
                 </div>
                 <FaArrowRight />
               </div>
-              <div className="progress-bar">
-                <div
-                  className="progress"
-                  style={{ width: `${result.percentage}%` }}
-                ></div>
+              <div className="flex-row">
+
+                <div className="progress-bar">
+                  <div
+                    className="progress"
+                    style={{ width: `${result.percentage}%` }}
+                  ></div>
+                </div>
+                <p>{result.percentage}%</p>
                 </div>
             </div>
           ))}
