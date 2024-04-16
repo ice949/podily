@@ -18,7 +18,7 @@ function App() {
         <Route path="/onboarding-one" element={<OnboardingOne />} />
         <Route path="/onboarding-two" element={<OnboardingTwo />} />
         <Route path="/pathways" element={<Pathways />} />
-        <Route path="/practice" element={<Practice />} />
+        <Route path="/practice/:id" element={<Practice />} />
       </Routes>
     </Router>
   );

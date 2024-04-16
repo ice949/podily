@@ -156,6 +156,78 @@ img {
         border-radius: 10px;
     }
 
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .main-card {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+      }
+      
+      .main-card-header {
+        padding: 10px;
+        background-color: #2563EA;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+      }
+      
+      .main-card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+      
+      .action {
+        width: 100%;
+        background-color: #2563EA;
+        padding: 10px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        color: #fff;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .btn2 {
+        padding: 10px 20px;
+        text-align: center;
+        background-color: #2563EA;
+        color: #fff;
+        border-radius: 10px;
+        border: none;
+      }
+
+      .red {
+        color: red;
+      }
+      
+      .action-icon {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .dat {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      audio {
+        width: 100%;
+        /* background-color: transparent; */
+      }
+      
+
 
   
   @keyframes pulse {

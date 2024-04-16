@@ -23,8 +23,8 @@ const Header = ({value}) => {
                 <img src={logo} alt="logo" />
             </div>
             <ul className="d-nav">
-                <li className={`${value === "pathways"? "active-route": ""}`}>
-                    <NavLink to='/pathways'><FaTrophy/>Pathways</NavLink>
+                <li className={`${value === "library"? "active-route": ""}`}>
+                    <NavLink to='/pathways'><FaTrophy/>Pitch Library </NavLink>
                 </li>
                 <li className={`${value === "practice"? "active-route": ""}`}>
                 <NavLink to='/practice'><FaMicrophone/>Practice</NavLink>
